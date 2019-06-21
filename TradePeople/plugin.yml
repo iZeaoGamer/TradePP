@@ -1,0 +1,8 @@
+name: TradePP
+version: 1
+main: tungst_tradePP\Main
+api: 3.0.0
+author: TungstenVn
+commands:
+ trade:
+  description: "Open Trade"
