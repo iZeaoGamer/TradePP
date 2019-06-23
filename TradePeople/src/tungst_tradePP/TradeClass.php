@@ -36,6 +36,9 @@ class TradeClass extends Task implements Listener {
   public $isAdd = false;
   public $isAdd2 = false;
   public function __construct(Main $owner,$requester,$requested){
+	  if(!InvMenuHandler::isRegistered()) {
+			InvMenuHandler::register($owner);
+	  }
 	  $this->owner = $owner;
 	  $this->p1 = $requester;
 	  $this->p1 = $requested;
@@ -45,6 +48,7 @@ class TradeClass extends Task implements Listener {
             $this->isP2acc = false;
 			var_dump($this->itemP1);
 	  $this->on($requester,$requested);
+	  
   }
   
   public function onRun($tick){
