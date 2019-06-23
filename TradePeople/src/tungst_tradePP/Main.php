@@ -44,7 +44,7 @@ class Main extends PluginBase implements Listener {
 			     switch(strtolower($args[0])){   
 				   
 				 case "help":
-				  $sender->sendMessage(TextFormatr::colorize("&7/trade {name} - &btrade with that player"));
+				  $sender->sendMessage(TextFormat::colorize("&7/trade {name} - &btrade with that player"));
 				  $sender->sendMessage(TextFormat::colorize("&7/trade accept - &baccept trade"));
 				  $sender->sendMessage(TextFormat::colorize("&7/trade decline - &bquickly decline a trade invite (auto decline after 10s)"));
 				  break;
