@@ -14,6 +14,7 @@ use muqsit\invmenu\InvMenuHandler;
 use muqsit\invmenu\InvMenu;
 use pocketmine\item\Item;
 use pocketmine\scheduler\Task;
+use pocketmine\utils\TextFormat;
 use pocketmine\plugin\Plugin;
 
 use muqsit\invmenu\inventories\ChestInventory;
@@ -58,8 +59,8 @@ class TradeClass extends Task implements Listener {
 	   $this->p2 = $sender2;
 	   $menu = InvMenu::create(\muqsit\invmenu\inventories\ChestInventory::class);
        $menu->setName("Trade of ".$sender->getName()." and ". $sender2->getName());
-       $menu->getInventory()->setItem(18,Item::get(35,14, 1));
-	   $menu->getInventory()->setItem(26,Item::get(35,14, 1));
+     //  $menu->getInventory()->setItem(18,Item::get(35,14, 1));
+	//   $menu->getInventory()->setItem(26,Item::get(35,14, 1));
 	   $menu->setInventoryCloseListener(function(Player $player){
 	   if($this->isFinish){
 		$this->p1->sendMessage("Trade successful");
@@ -67,8 +68,8 @@ class TradeClass extends Task implements Listener {
 	   }else{
 	   if($this->isClose){return false;
 	  }else{
-       $this->p1->sendMessage($player->getName()."has canceled the trade");
-	   $this->p2->sendMessage($player->getName()."has canceled the trade");
+       $this->p1->sendMessage($player->getName().TextFormat::colorize(" &6successfully traded with you."));
+	   $this->p2->sendMessage($player->getName().TextFormat::colorize(" &6has successfully traded with you."));
 	   foreach($this->itemP1 as $item){
 				$this->p1->getInventory()->addItem($item);
 			}
