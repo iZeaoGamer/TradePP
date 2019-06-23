@@ -18,6 +18,7 @@ use pocketmine\inventory\transaction\action\SlotChangeAction;
 use tungst_tradePP\TradeClass;
 use tungst_tradePP\CheckTask;
 use pocketmine\scheduler\TaskScheduler;
+use pocketmine\utils\TextFormat;
 class Main extends PluginBase implements Listener {
     public $task;
 	public $request = [];
