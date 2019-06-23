@@ -94,8 +94,12 @@ class TradeClass extends Task implements Listener {
 	   $this->menu->send($sender2);
 	   print("sent");
   } 
-  public function onTransaction(InventoryTransactionEvent $event){
-	    $transactions = $event->getTransaction()->getActions();
+ /* public function onTransaction(InventoryTransactionEvent $event){
+	  $this->p1->removeWindow($this->menu->getInventory());
+			$this->p2->removeWindow($this->menu->getInventory());
+			$this->owner->getScheduler()->cancelTask($this->getTaskId());
+  }
+/*	    $transactions = $event->getTransaction()->getActions();
         $isGonnaAccepted = false; //check if gonna accept or not
 		$player = null;
 		$don = null;
