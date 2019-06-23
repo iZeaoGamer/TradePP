@@ -2,4 +2,7 @@
 projects:
   TradePeople:
     path: TradePeople/
+    libs:
+      - src: muqsit/invmenu
+        version: ^2.0.0
 ...
