@@ -3,6 +3,6 @@ projects:
   TradePeople:
     path: TradePeople/
     libs:
-      - src: muqsit/invmenu
+      - src: Muqsit/invmenu
         version: ^2.0.0
 ...
