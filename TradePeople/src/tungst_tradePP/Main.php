@@ -27,6 +27,8 @@ class Main extends PluginBase implements Listener {
 	public function onEnable(){
 		$this->getLogger()->info("Trade enable");
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
+		if(!InvMenuHandler::isRegistered()) {
+			InvMenuHandler::register($this);
 	}
 	
 	public function onCommand(CommandSender $sender, Command $command, String $label, array $args) : bool {
