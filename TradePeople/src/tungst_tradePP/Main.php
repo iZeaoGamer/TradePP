@@ -1,7 +1,5 @@
 <?php
-
 namespace tungst_tradePP;
-
 use pocketmine\plugin\PluginBase;
 use pocketmine\Player; 
 use pocketmine\Server;
@@ -21,7 +19,6 @@ use tungst_tradePP\TradeClass;
 use tungst_tradePP\CheckTask;
 use pocketmine\scheduler\TaskScheduler;
 class Main extends PluginBase implements Listener {
-
     public $task;
 	public $request = [];
 	public function onEnable(){
@@ -30,7 +27,7 @@ class Main extends PluginBase implements Listener {
 		if(!InvMenuHandler::isRegistered()) {
 			InvMenuHandler::register($this);
 	}
-	
+	}
 	public function onCommand(CommandSender $sender, Command $command, String $label, array $args) : bool {
         //string $minname; 
 		if($sender instanceof Player){
@@ -101,7 +98,6 @@ class Main extends PluginBase implements Listener {
 	}
 	public  function onJoin(PlayerJoinEvent $e){
 		print("a");
-
 	}
 	public function onTransaction(InventoryTransactionEvent $event){
 	
