@@ -2,7 +2,8 @@
 projects:
   TradePeople:
     path: TradePeople/
-    - src: muqsit/InvMenu/InvMenu
+    libs:
+      - src: muqsit/InvMenu/InvMenu
         version: ^2.0.0
         branch: master
 ...
