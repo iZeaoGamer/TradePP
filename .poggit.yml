@@ -1,7 +1,4 @@
 --- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/TungstenVn/TradePP
-branches:
-- master
-- patch-1
 projects:
   TradePeople:
     path: TradePeople/
