@@ -6,3 +6,6 @@ author: TungstenVn
 commands:
  trade:
   description: "Open Trade"
+
+virions:
+- InvMenu
