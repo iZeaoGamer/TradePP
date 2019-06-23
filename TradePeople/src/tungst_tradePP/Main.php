@@ -37,15 +37,15 @@ class Main extends PluginBase implements Listener {
 			   break;
                case "trade":
 			    if(!isset($args[0])){
-					$sender->sendMessage("Use /trade help");
+					$sender->sendMessage(TextFormat::colorize("&6Use &b/trade help"));
 					return false;
 				}else{
 			     switch(strtolower($args[0])){   
 				   
 				 case "help":
-				  $sender->sendMessage("/trade {name} to trade with that player");
-				  $sender->sendMessage("/trade accept to accept trade");
-				  $sender->sendMessage("/trade decline to quickly decline a trade invite (auto decline after 10s)");
+				  $sender->sendMessage(TextFormatr::colorize("&7/trade {name} - &btrade with that player"));
+				  $sender->sendMessage(TextFormat::colorize("&7/trade accept - &baccept trade"));
+				  $sender->sendMessage(TextFormat::colorize("&7/trade decline - &bquickly decline a trade invite (auto decline after 10s)"));
 				  break;
 				 case "accept":
 				  if(in_array($sender->getName(),$this->request)){			
@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener {
 						    unset($this->request[array_search($sender->getName(),$this->request)]);
 						}
 				  }else{
-					$sender->sendMessage("You dont have any trade request"); 
+					$sender->sendMessage(TextFormat::colorize("&cYou dont have any trade request")); 
 				  }
 				  break;
 				 case "decline":
@@ -69,7 +69,7 @@ class Main extends PluginBase implements Listener {
 					unset($this->request[$sender]);
 					$sender->sendMessage("Cancel trade successful");
 				   }else{
-					$sender->sendMessage("You dont have any trade request");
+					$sender->sendMessage(TextFormat::colorize("&cYou dont have any trade request"));
 				   }
 				  break;
 				 case "t":
@@ -81,10 +81,10 @@ class Main extends PluginBase implements Listener {
 				 default:		    
                          if($this->getServer()->getPlayer($args[0]) != null && $this->getServer()->getPlayer($args[0]) != $sender){
 				   	       $this->request[$sender->getName()] = $this->getServer()->getPlayer($args[0])->getName();
-							  $this->getServer()->getPlayer($args[0])->sendMessage($sender->getName(). "want to trade with you,auto decline in 10s");
+							  $this->getServer()->getPlayer($args[0])->sendMessage($sender->getName(). TextFormat::colorize(" &6want to trade with you. You have: &b10 &6seconds to trade."));
 					       $this->getScheduler()->scheduleDelayedTask(new CheckTask($this,$sender->getName(),$this->getServer()->getPlayer($args[0])->getName()), 200);				  
 						 }else{
-					       $sender->sendMessage("Cant find that player");
+					       $sender->sendMessage(TextFormat::colorize("&cCant find that player"));
 						 }
 							      
                    break;
